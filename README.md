@@ -13,15 +13,43 @@ Tool to save and load the Qt Creator layout.
 
 ## Usage
 
-```shell
-$ qtcreator-layout --save widescreen
+### Save layout
 
-$ qtcreator-layout --list
-Layouts:
-- widescreen
+1) Open Qt Creator and adjust the layout to your preference.
 
-$ qtcreator-layout --load widescreen
-```
+2) Close Qt Creator.
+
+3) Save the layout with any name you like:
+
+    ```shell
+    $ qtcreator-layout --save widescreen
+    ```
+
+4) Verify that the layout was saved by listing the available layouts:
+
+    ```shell
+    $ qtcreator-layout --list
+    Layouts:
+    - widescreen
+    ```
+
+### Load layout
+
+1) List the previously saved layouts:
+
+    ```shell
+    $ qtcreator-layout --list
+    Layouts:
+    - widescreen
+    ```
+
+2) Load the layout by its name:
+
+    ```shell
+    $ qtcreator-layout --load widescreen
+    ```
+
+3) Open Qt Creator.
 
 ## Libraries
 
