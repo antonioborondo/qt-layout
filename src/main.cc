@@ -1,9 +1,11 @@
+#include <iostream>
+
 #include <QCommandLineOption>
 #include <QCommandLineParser>
 #include <QCoreApplication>
 #include <QString>
 
-#include "layout.h"
+#include "layouts.h"
 #include "version.h"
 
 int main(int argc, char** argv) {
@@ -23,14 +25,23 @@ int main(int argc, char** argv) {
   QCommandLineOption load_option({"l", "load"}, "Load layout.", "LAYOUT_NAME");
   parser.addOption(load_option);
 
+  QCommandLineOption list_option({"i", "list"}, "List layouts.");
+  parser.addOption(list_option);
+
   parser.process(app);
 
   if (parser.isSet(save_option)) {
     const auto layout_name{parser.value(save_option)};
-    layout::Save(layout_name);
+    layouts::Save(layout_name);
   } else if (parser.isSet(load_option)) {
     const auto layout_name{parser.value(load_option)};
-    layout::Load(layout_name);
+    layouts::Load(layout_name);
+  } else if (parser.isSet(list_option)) {
+    const auto layouts_list{layouts::List()};
+    std::cout << "Layouts:" << std::endl;
+    for (const auto& layout : layouts_list) {
+      std::cout << "- " << layout.toStdString() << std::endl;
+    }
   } else {
     parser.showHelp();
   }

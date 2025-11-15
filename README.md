@@ -16,6 +16,10 @@ Tool to save and load the Qt Creator layout.
 ```shell
 $ qtcreator-layout --save widescreen
 
+$ qtcreator-layout --list
+Layouts:
+- widescreen
+
 $ qtcreator-layout --load widescreen
 ```
 

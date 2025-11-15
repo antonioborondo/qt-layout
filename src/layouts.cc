@@ -1,11 +1,13 @@
-#include "layout.h"
+#include "layouts.h"
 
 #include <QCoreApplication>
+#include <QDir>
 #include <QSettings>
+#include <QStandardPaths>
 
 #include "settings.h"
 
-namespace layout {
+namespace layouts {
 
 QStringList kLayoutGroups{"NavigationLeft", "OutputPanePlaceHolder"};
 
@@ -29,4 +31,20 @@ void Load(const QString& layout_name) {
   settings::CopyGroups(settings_backup, qt_settings, kLayoutGroups);
 }
 
-}  // namespace layout
+QStringList List() {
+  const QDir app_config_dir(
+      QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation));
+
+  const auto ini_files{app_config_dir.entryList(
+      QStringList() << "*.ini", QDir::Files | QDir::NoDotAndDotDot)};
+
+  QStringList layouts_list;
+  for (QString ini_file : ini_files) {
+    const auto layout_name{QFileInfo(ini_file).completeBaseName()};
+    layouts_list.append(layout_name);
+  }
+
+  return layouts_list;
+}
+
+}  // namespace layouts

@@ -11,7 +11,7 @@ configure_file(
 )
 
 add_executable(qtcreator-layout
-  src/layout.cc
+  src/layouts.cc
   src/main.cc
   src/settings.cc
 )
