@@ -4,12 +4,12 @@
 
 ## Description
 
-Tool to save and load the Qt Creator layout.
+Tool to save and restore the Qt Creator layout.
 
 ## Features
 
 - Save the layout of the left panel, bottom panel, and status bar.
-- Allows saving multiple layouts identified by name.
+- Restore layouts previously saved identified by name.
 
 ## Usage
 
@@ -33,7 +33,7 @@ Tool to save and load the Qt Creator layout.
     - widescreen
     ```
 
-### Load layout
+### Restore layout
 
 1) List the previously saved layouts:
 
@@ -43,10 +43,10 @@ Tool to save and load the Qt Creator layout.
     - widescreen
     ```
 
-2) Load the layout by its name:
+2) Restore the layout by its name:
 
     ```shell
-    $ qtcreator-layout --load widescreen
+    $ qtcreator-layout --restore widescreen
     ```
 
 3) Open Qt Creator.

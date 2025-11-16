@@ -8,7 +8,7 @@ namespace layouts {
 
 void Save(const QString& layout_name);
 
-void Load(const QString& layout_name);
+void Restore(const QString& layout_name);
 
 QStringList List();
 

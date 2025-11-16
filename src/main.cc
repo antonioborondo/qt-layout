@@ -22,10 +22,11 @@ int main(int argc, char** argv) {
   QCommandLineOption save_option({"s", "save"}, "Save layout.", "LAYOUT_NAME");
   parser.addOption(save_option);
 
-  QCommandLineOption load_option({"l", "load"}, "Load layout.", "LAYOUT_NAME");
-  parser.addOption(load_option);
+  QCommandLineOption restore_option({"r", "restore"}, "Restore layout.",
+                                    "LAYOUT_NAME");
+  parser.addOption(restore_option);
 
-  QCommandLineOption list_option({"i", "list"}, "List layouts.");
+  QCommandLineOption list_option({"l", "list"}, "List layouts.");
   parser.addOption(list_option);
 
   parser.process(app);
@@ -33,9 +34,9 @@ int main(int argc, char** argv) {
   if (parser.isSet(save_option)) {
     const auto layout_name{parser.value(save_option)};
     layouts::Save(layout_name);
-  } else if (parser.isSet(load_option)) {
-    const auto layout_name{parser.value(load_option)};
-    layouts::Load(layout_name);
+  } else if (parser.isSet(restore_option)) {
+    const auto layout_name{parser.value(restore_option)};
+    layouts::Restore(layout_name);
   } else if (parser.isSet(list_option)) {
     const auto layouts_list{layouts::List()};
     std::cout << "Layouts:" << std::endl;

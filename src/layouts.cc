@@ -22,7 +22,7 @@ void Save(const QString& layout_name) {
   settings::CopyGroups(qt_settings, settings_backup, kLayoutGroups);
 }
 
-void Load(const QString& layout_name) {
+void Restore(const QString& layout_name) {
   QSettings qt_settings(QSettings::IniFormat, QSettings::UserScope, "QtProject",
                         "QtCreator");
 
