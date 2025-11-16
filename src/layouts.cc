@@ -2,6 +2,8 @@
 
 #include <QCoreApplication>
 #include <QDir>
+#include <QFile>
+#include <QFileInfo>
 #include <QSettings>
 #include <QStandardPaths>
 #include <QString>
@@ -32,6 +34,15 @@ void Restore(const QString& layout_name) {
                             QCoreApplication::applicationName(), layout_name);
 
   settings::CopyGroups(settings_backup, qt_settings, kLayoutGroups);
+}
+
+void Delete(const QString& layout_name) {
+  const QDir app_config_dir{
+      QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)};
+  const QString filename{layout_name + ".ini"};
+  const QFileInfo file_info{app_config_dir, filename};
+  QFile file{file_info.canonicalFilePath()};
+  file.remove();
 }
 
 QStringList List() {

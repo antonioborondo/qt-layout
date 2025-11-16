@@ -10,6 +10,8 @@ void Save(const QString& layout_name);
 
 void Restore(const QString& layout_name);
 
+void Delete(const QString& layout_name);
+
 QStringList List();
 
 }  // namespace layouts

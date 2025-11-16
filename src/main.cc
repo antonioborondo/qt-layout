@@ -26,6 +26,10 @@ int main(int argc, char** argv) {
                                     "LAYOUT_NAME");
   parser.addOption(restore_option);
 
+  QCommandLineOption delete_option{
+      {"d", "delete"}, "Delete layout.", "LAYOUT_NAME"};
+  parser.addOption(delete_option);
+
   QCommandLineOption list_option({"l", "list"}, "List layouts.");
   parser.addOption(list_option);
 
@@ -37,6 +41,9 @@ int main(int argc, char** argv) {
   } else if (parser.isSet(restore_option)) {
     const auto layout_name{parser.value(restore_option)};
     layouts::Restore(layout_name);
+  } else if (parser.isSet(delete_option)) {
+    const auto layout_name{parser.value(delete_option)};
+    layouts::Delete(layout_name);
   } else if (parser.isSet(list_option)) {
     const auto layouts_list{layouts::List()};
     std::cout << "Layouts:" << std::endl;
