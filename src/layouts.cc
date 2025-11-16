@@ -4,6 +4,8 @@
 #include <QDir>
 #include <QSettings>
 #include <QStandardPaths>
+#include <QString>
+#include <QStringList>
 
 #include "settings.h"
 

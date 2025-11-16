@@ -1,5 +1,8 @@
 #include "settings.h"
 
+#include <QSettings>
+#include <QStringList>
+
 namespace {
 
 void CopyGroup(QSettings& settings_source, QSettings& settings_destination,
