@@ -9,7 +9,8 @@
 
 namespace layouts {
 
-QStringList kLayoutGroups{"NavigationLeft", "OutputPanePlaceHolder"};
+QStringList kLayoutGroups{"NavigationLeft", "OutputPanePlaceHolder",
+                          "StatusBar"};
 
 void Save(const QString& layout_name) {
   QSettings qt_settings(QSettings::IniFormat, QSettings::UserScope, "QtProject",
