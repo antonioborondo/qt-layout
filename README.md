@@ -35,7 +35,9 @@ Tool to save and restore the Qt Creator layout.
 
 ### Restore layout
 
-1) List the previously saved layouts:
+1) Close Qt Creator.
+
+2) List the previously saved layouts:
 
     ```shell
     $ qtcreator-layout --list
@@ -43,13 +45,13 @@ Tool to save and restore the Qt Creator layout.
     - widescreen
     ```
 
-2) Restore the layout by its name:
+3) Restore the layout by its name:
 
     ```shell
     $ qtcreator-layout --restore widescreen
     ```
 
-3) Open Qt Creator.
+4) Open Qt Creator.
 
 ## Libraries
 
