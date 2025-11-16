@@ -11,7 +11,7 @@ void CopyGroup(QSettings& settings_source, QSettings& settings_destination,
   settings_destination.beginGroup(settings_group_name);
 
   const auto keys{settings_source.childKeys()};
-  for (const QString& key : keys) {
+  for (const auto& key : keys) {
     const auto value{settings_source.value(key)};
     settings_destination.setValue(key, value);
   }

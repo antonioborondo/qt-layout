@@ -19,18 +19,18 @@ int main(int argc, char** argv) {
   parser.addHelpOption();
   parser.addVersionOption();
 
-  QCommandLineOption save_option({"s", "save"}, "Save layout.", "LAYOUT_NAME");
+  QCommandLineOption save_option{{"s", "save"}, "Save layout.", "LAYOUT_NAME"};
   parser.addOption(save_option);
 
-  QCommandLineOption restore_option({"r", "restore"}, "Restore layout.",
-                                    "LAYOUT_NAME");
+  QCommandLineOption restore_option{
+      {"r", "restore"}, "Restore layout.", "LAYOUT_NAME"};
   parser.addOption(restore_option);
 
   QCommandLineOption delete_option{
       {"d", "delete"}, "Delete layout.", "LAYOUT_NAME"};
   parser.addOption(delete_option);
 
-  QCommandLineOption list_option({"l", "list"}, "List layouts.");
+  QCommandLineOption list_option{{"l", "list"}, "List layouts."};
   parser.addOption(list_option);
 
   parser.process(app);
