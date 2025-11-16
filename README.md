@@ -8,7 +8,7 @@ Tool to save and load the Qt Creator layout.
 
 ## Features
 
-- Save the layout of the left and bottom panels.
+- Save the layout of the left panel, bottom panel, and status bar.
 - Allows saving multiple layouts identified by name.
 
 ## Usage
