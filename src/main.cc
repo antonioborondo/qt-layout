@@ -12,8 +12,7 @@ int main(int argc, char** argv) {
   QCoreApplication app(argc, argv);
 
   QCoreApplication::setApplicationName("qtcreator-layout");
-  QCoreApplication::setApplicationVersion(
-      QString::fromStdString(kVersion.data()));
+  QCoreApplication::setApplicationVersion(kVersion);
 
   QCommandLineParser parser;
   parser.addHelpOption();
