@@ -30,7 +30,7 @@ target_link_libraries(qtcreator-layout
 
 include(GNUInstallDirs)
 
-install(TARGETS qtcreator-layout RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(TARGETS qtcreator-layout DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 set(CPACK_DEBIAN_PACKAGE_DEPENDS libqt6core6)
 
